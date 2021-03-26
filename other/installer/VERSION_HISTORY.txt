@@ -8,7 +8,7 @@ Additions:
    - now is possible to calculate the root in the literal mode
    - added support for undefined powers in the monomial calculation
    - in the $err set the @inaccessible_mem and @other_error attributes have been added
-   - now the code is available on GitHub:
+   - now the code is available on GitHub: https://github.com/TheSilvered/Calculator3
 
 Changes:
    - now the letter 'x' is no longer considered an operator, but 'X' is
