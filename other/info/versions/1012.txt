@@ -1,0 +1,17 @@
+
+Version 1.0.1.2
+Changelog:
+- updated info message
+- now to see the new features type '_vshs last'
+- added basic calculations to the Monomial() class, not accessible yet
+- now the file nums.mem is accessible
+- now the fix_number() function fixes the number correctly
+- now 'N(' and ')N' are considered multiplications
+- load_txt function moved from cmds.py to func.py
+- now N / 0 no longer equals func.lan["undetermined"] but func.lan["impossible"]
+- changed command format for '_lang', input '_help lang' for more details
+- changed _lang files comments
+- added '$cmd' set on .lang files
+- added commands attributes on .lang files (@acal, @addm, @advn...)
+- now commands infos are in the .lang files
+- added .lang file template 'empty.lang'

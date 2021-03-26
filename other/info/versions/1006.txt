@@ -1,0 +1,7 @@
+
+Version 1.0.0.6
+Changelog:
+- now the output with a complex number now displays always correctly
+- now you can save memory files in other directories
+- now you can open memory files in other directories
+- _acal now works consistently

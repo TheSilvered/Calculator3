@@ -1,0 +1,6 @@
+
+Version 1.0.0.4
+Changelog:
+- the program no longer crashes when inserting numbers too big
+- now a blank line appears when showing the result
+- now default language is English

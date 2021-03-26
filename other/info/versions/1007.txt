@@ -1,0 +1,10 @@
+
+Version 1.0.0.7
+Changelog:
+- the optimization of the func.py module has been slightly improved
+- now the .lang files are in the 'languages' directory
+- now 'settings.json' and 'acronym_lang.json' are in the 'settings' directory
+- added _vshs command to show this file
+- now the commands _amem, _dmem and _seem work once again, along the new ones
+- added Monomial class, not yet accessible
+- further optimization on long calculations

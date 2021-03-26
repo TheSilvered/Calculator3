@@ -1,0 +1,4 @@
+
+Version 1.0.0.1
+Changelog:
+- now the program no longer crashes when invalid numbers are inserted

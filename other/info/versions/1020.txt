@@ -1,0 +1,22 @@
+
+Version 1.0.2.0
+######### Changelog #########
+
+Additions:
+- now is possible to calculate the root in the literal mode
+- added support for undefined powers in the monomial calculation
+
+Changes:
+- now the letter 'x' is no longer considered an operator
+- now complex results are shown as coordinates in the complex plane
+- you can no longer save files that contain inaccessible characters
+
+Fixes:
+- fixed a bug that caused ES.lang to not load properly
+- fixed a bug that caused the first value of an expression when the @impossible_div_error appeared
+- fixed a crash that could occur when using the '-' operator and the literal mode was enabled
+- fixed several crashes that could occur when trying to divide in the literal mode
+
+Planned additions and changes:
+- remove the literal mode entirely and make the calculator operate with only monomials
+- add a separate mode to calculate fractions
