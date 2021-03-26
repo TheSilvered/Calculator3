@@ -1,1 +1,414 @@
+$msg
+::
+::
+::
+@info
 
+Calculator by Davide Taffarello
+
+Operators:
+'+' -> addition
+'-' -> subtraction
+'*' or 'x' -> multiplication
+'/' or ':' -> division
+'^' -> power
+'%' -> reminder
+'R' -> root (2R -> square root, 3R -> cubic root)
+
+A comma or a point determines the beginning of the non-integer part of the number: 1.1 = 1,1
+With the '_acal' command you can decide whether it accepts both the English writing system and
+the international one or just the one in use, '_help acal' for more information on the command.
+The operators listed above are the ones available, in the case of division and multiplication,
+both are accepted but the first of the two will be shown.
+The calculator has a memory system, do '_help addm', '_help delm' and '_help *cmem' for more
+information.
+
+A clarification regarding the root:
+if you enter '2R 2R 16' the result will not be 2 but the root 1.41421... of 16, to do it
+so that the result is 2 the brackets must be added: 2R (2R 16) = 2.
+
+Enter '_help' to open the command list, '_help help' for more information on command.
+::
+@help
+
+'_help' -> opens this list
+'_info' -> to get information about the program
+'_exmp' -> to get an example of expression
+'_show' -> shows the current settings
+'_advn' -> shows the advanced commands
+
+'_swap' -> swaps between the English and the international systems in the output
+'_expr' -> to show or not the expression in the output
+'_acal' -> the input will be read with the writing system in use or will accept any
+'_stop' -> to stop the program
+'_lang' -> to change the language
+'_load' -> reloads the available languages
+
+'_addm' -> adds a number to memory
+'_delm' -> removes a number from memory
+'_smem' -> shows what's saved in memory
+'_save' -> to save the memory as a file
+'_open' -> to open a file in which memory has been saved
+
+
+It's not cap-sensitive
+::
+@advanced_help
+
+'#dbug' -> shows or not the debug log
+'#prth' -> ignores the parenthesis' order
+'#rset' -> resets the settings to default
+'#cmem' -> deletes everything from the memory
+'#exit' -> stops instantly the program
+'#path' -> show the folder in which the program executable is stored
+'#ltrl' -> enables literal mode
+::
+@example
+
+Input expression:       # This line always appears
+> 3R (3^2 + 18)         # This is what you type in
+3R (3 ^ 2 + 18) = 3     # This shows what the program understood and the result
+::
+@available_languages
+Available languages:
+@added_to_mem
+&has been added to memory
+@deleted_from_mem
+&has been deleted from memory
+@empty_mem
+Memory is empty
+@settings_res
+The settings have been reset
+@mem_res
+The memory has been reset
+@lang_loaded
+The language has been reloaded
+@file_saved
+&The file has been saved at
+@file_opened
+&has been opened successfully
+::
+::
+::
+$err
+::
+::
+::
+@syntax_error
+Invalid syntax
+::
+@complex
+&You can't calculate a complex or negative root
+::
+@file_not_found
+File not found
+::
+@invalid_command
+Invalid command
+::
+@permission_error
+You don't have permission to access this folder
+::
+@no_num_name
+You cannot use a number as the name of the value
+::
+@no_mem_cell
+The specified memory cell does not exist
+::
+@invalid_answer
+The answer is invalid
+::
+@no_such_cmd
+&There is no command called
+::
+@no_such_lang
+The inserted language is not currently available
+::
+@impossible_div_error
+In this calculation there is an impossible division
+::
+@non_int_pow_error
+&The power must be an integer
+::
+@name_error
+The file could not be saved
+The specified name is reserved by Windows
+::
+@inaccessible_mem
+Memory is not accessible in literal mode
+::
+@other_error
+&An unexpected error occurred. The error type is:
+::
+::
+::
+$inp
+::
+::
+::
+@expression
+Input expression:
+::
+@stop
+Do you really want to exit? Answer: Y/N (Y = Yes, N = No)
+::
+@lang_acronym
+Write the acronym of your language:
+::
+@add_mem
+Input the name and the value if it has to be specified:
+::
+@del_mem
+Input the name of the value to delete:
+::
+@mem_res
+Do you really want to delete all the memory? Answer: Y/N (Y = Yes, N = No)
+::
+@settings_res
+Do you really want to reset the settings? Answer: Y/N (Y = Yes, N = No)
+::
+@save_path
+Input the filepath of the folder you wat to save the file in:
+::
+@open_path
+Input the filepath of the folder where the file is:
+::
+@file_name
+Input the name of the file (do not add .mem):
+::
+::
+::
+$out
+::
+::
+::
+@debug_mode
+&Debug mode
+::
+@ignore_prth
+&Ignore parenthesis
+::
+@us_uk_sys
+&English system
+::
+@output_string
+&Output expression
+::
+@accept_all
+&Accept all systems
+::
+@lang
+&Current language
+::
+@switch
+&is now
+::
+@literal
+&Literal calculation
+::
+@operation_cancelled
+Operation cancelled
+::
+::
+::
+$lan
+::
+::
+::
+@infinity
+&Infinity
+::
+@true
+&True
+::
+@false
+&False
+::
+@undetermined
+&Undetermined
+::
+@impossible
+&Impossible
+::
+::
+::
+$cmd
+::
+::
+::
+@bs_acal
+
+It switches between 'accept all systems' and 'accepts current system' mode
+
+To recognise all systems it works this way:
+- Checks the number of points and commas
+- If there is more than one point and/or comma it ignores them
+- In case there is one comma and one point it ignores the last sign
+
+Example:
+> 1.658.156,488 -> 2 points, one comma: it ignores the points -> 1658156,488
+> 12.189,14 -> one point, one comma: it ignores nothing -> the point is before the comma: it ignores the point -> 12189.14
+> 1.000 -> one point, 0 commas: it ignores nothing -> 1.0
+
+In case it accepts only the current system:
+If the current system is English than ignores the commas
+If the current system is international ignores the points
+::
+@bs_addm
+
+It adds a value to memory
+
+When it asks to add a value, if you insert only the name
+the value assigned will be the last result
+
+Example:
+
+> 1+1
+1 + 1 = 2
+
+> _addm
+> pi 3,14
+'pi = 3,14' has been added to memory
+
+> _addm
+> a
+'a = 2' has been added to memory
+::
+@bs_advn
+There is no further information for this command.
+::
+@bs_delm
+
+When you input the name of the value it gets deletes
+
+Example:
+> _delm
+> a
+'a = 2' has been deleted from memory
+::
+@bs_exmp
+There is no further information for this command.
+::
+@bs_expr
+There is no further information for this command.
+::
+@bs_help
+
+Shows all commands and their uses.
+Syntax:
+> _help <command>
+
+command -> the command you are searching information about, with the prefix included
+
+Example:
+> _help #dbug
+> _help _save
+::
+@bs_info
+There is no further information for this command.
+::
+@bs_lang
+
+With this command you change the language of the program.
+Syntax:
+> _lang <language>
+
+<language> -> an optional parameter where you can enter the acronym of the language
+
+Example:
+> _lang EN
+> 'Current language' is now English
+::
+@bs_load
+There is no further information for this command.
+::
+@bs_open
+
+Opens a .mem file where the memory has been saved
+You can enter the path and then the file name or
+add it with the extension at the end of the path
+
+Syntax:
+> _open <*overwrite> <path>
+
+*overwrite -> if you want to replace the memory with tho one of the file
+              (do not put it if you just want to add without removing any number)
+
+path -> an optional parameter where you can enter the folder path followed by
+        the filename
+
+Example:
+> _open
+> C:\Users\[USERNAME]\Documents\example.mem
+::
+@bs_save
+
+It saves a .mem file in a specific folder
+You can enter the path and then the file name or add it
+with the extension at the end of the path.
+
+Syntax:
+> _save <path>
+
+path -> an optional parameter where you can enter the folder path followed by
+        the filename
+
+Example:
+> _save
+> C:\Users\[USERNAME]\Documents\example.mem
+::
+@bs_show
+There is no further information for this command.
+::
+@bs_smem
+There is no further information for this command.
+::
+@bs_stop
+There is no further information for this command.
+::
+@bs_swap
+
+It switches the output between English and international writing system
+
+In the international system, points for thousands and commas are used
+for the decimal part.
+
+In the English system, commas are used for thousands and a period for
+the decimal part.
+::
+@bs_vshs
+
+It shows the changes of each version
+
+You can specify a particular version otherwise they will come
+view all.
+
+Format:
+> _vshs <version>
+
+version -> a version of those listed when typing the _vshs command
+           without specifying it, 'last' shows the most recent changes
+::
+@ad_cmem
+There is no further information for this command.
+::
+@ad_dbug
+
+It shows the debug log when performing a calculation and shows
+a partial log in the calclog.log file.
+::
+@ad_exit
+There is no further information for this command.
+::
+@ad_prth
+There is no further information for this command.
+::
+@ad_rset
+There is no further information for this command.
+::
+@ad_path
+There is no further information for this command.
+::
+@ad_ltrl
+There is no further information for this command.
+::

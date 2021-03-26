@@ -1,0 +1,423 @@
+$msg
+::
+::
+::
+@info
+
+Calculator by Davide Taffarello
+
+Operatori:
+'+' -> addizione
+'-' -> sottrazione
+'*' o 'x' -> moltiplicazione
+'/' o ':' -> divisione
+'^' -> potenza
+'%' -> resto della divisione
+'R' -> radice (2R -> radice quadrata, 3R -> radice cubica)
+
+Una virgola o un punto determinano l'inizio della parte non intera del numero: 1.1 = 1,1
+Con il comando '_acal' puoi decidere se accetta sia il sistema di scrittura inglese che
+quello internazionale o solamente quello in uso, '_help acal' per più informazioni sul comando.
+Gli operatori elencati sopra sono quelli disponibili, nel caso della divisione e della
+moltiplicazione sono accettati entrambi quelli elencati ma verrà mostrato il primo dei due.
+La calcolatrice dispone di un sistema di memoria, fai '_help addm', '_help delm' e '_help *cmem'
+per avere più informazioni.
+
+Una precisazione per quanto riguarda la radice:
+se si inserisce '2R 2R 16' il risultato non sarà 2 ma la radice 1,41421... di 16, per fare in
+modo che il risultato sia 2 vanno aggiunte le parentesi: 2R (2R 16).
+
+Inserisci '_help' per aprire la lista dei comandi, '_help help' per maggiori informazioni
+sul comando.
+::
+@help
+
+'_help' -> apre questa lista
+'_info' -> per avere informazioni sul programma
+'_exmp' -> per avere un esempio di espressione
+'_show' -> mostra le impostazioni correnti
+'_advn' -> mostra i comandi avanzati
+
+'_swap' -> cambia tra sistema di scrittura inglese e quello internazionale
+'_expr' -> per mostrare o meno l'espressione nell'output
+'_acal' -> l'input verrà letto secondo il sistema di scrittura in uso o acetterà tutti i sistemi
+'_stop' -> per fermare il programma
+'_lang' -> per cambiare la lingua
+'_load' -> ricarica le lingue disponibili
+
+'_addm' -> aggiunge un numero alla memoria
+'_delm' -> rimuove un numero dalla memoria
+'_smem' -> mostra cos'è salvato in memoria
+'_save' -> per salvare la memoria su un file
+'_open' -> per aprire un file dove è stata salvata la memoria
+
+
+I comandi non sono sensibili alle maiuscole
+::
+@advanced_help
+
+'#dbug' -> mostra il log di debug
+'#prth' -> ignora l'ordine delle parentesi
+'#rset' -> resetta le impostazioni
+'#cmem' -> elimina tutto dalla memoria
+'#exit' -> ferma istantaneamente il programma
+'#path' -> mostra la cartella in cui si trova l'eseguibile del programma
+'#ltrl' -> attiva la modalità letterale
+::
+@example
+
+Inserisci espressione:  # Questa linea appare sempre
+> 3R (3^2 + 18)         # Questo è quello che digiti
+3R (3 ^ 2 + 18) = 3     # Questo mostra quello che ha capito il programma e il risultato
+::
+@available_languages
+Lingue disponibili:
+::
+@added_to_mem
+&è stato aggiunto alla memoria
+::
+@deleted_from_mem
+&è stato cancellato dalla memoria
+::
+@empty_mem
+La memoria è vuota
+::
+@settings_res
+Le impostazioni sono state resettate
+::
+@mem_res
+La memoria è stata resettata
+::
+@lang_loaded
+La lingua è stata ricaricata
+::
+@file_saved
+&Il file è stato salvato in
+::
+@file_opened
+&è stato aperto con successo
+::
+::
+::
+$err
+::
+::
+::
+@syntax_error
+Sintassi non valida
+::
+@complex
+&Non si può calcolare una radice complessa o negativa
+::
+@file_not_found
+File non trovato
+::
+@invalid_command
+Comando non valido
+::
+@permission_error
+Non hai il permesso di accedere a questa cartella
+::
+@no_num_name
+Non puoi usare un numero come nome del valore
+::
+@no_mem_cell
+La cella di memoria specificata non esiste
+::
+@invalid_answer
+La risposta non è valida
+::
+@no_such_cmd
+&Non esiste un comando chiamato
+::
+@no_such_lang
+La lingua inserita non è disponibile
+::
+@impossible_div_error
+In questo calcolo c'è una divisione impossiblie
+::
+@non_int_pow_error
+&La potenza deve essere un numero intero
+::
+@name_error
+Non è stato possibile salvare il file
+Il nome specificato è riservato da Windows
+::
+@inaccessible_mem
+La memoria non è accessibile nella modalità letterale
+::
+@other_error
+&Un errore imprevisto si è verificato. Il tipo di errore è:
+::
+::
+::
+$inp
+::
+::
+::
+@expression
+Inserisci espressione:
+::
+@stop
+Sei sicuro di voler uscire dal programma? Rispondi: Y/N (Y = Sì, N = No)
+::
+@lang_acronym
+Scrivi l'acronimo della tua lingua:
+::
+@add_mem
+Inserisci il nome e il valore se va specificato:
+::
+@del_mem
+Inserisci il nome del valore da cancellare:
+::
+@mem_res
+Sei sicuro di voler cancellare tutta la memoria? Rispondi: Y/N (Y = Sì, N = No)
+::
+@settings_res
+Sei sicuro di voler resettare le impostazioni? Rispondi: Y/N (Y = Sì, N = No)
+::
+@save_path
+Inserisci il percorso della cartella dove vuoi salvare il file:
+::
+@open_path
+Inserisci il percorso della cartella dove si trova il file:
+::
+@file_name
+Inserisci il nome del file (non mettere .mem):
+::
+::
+::
+$out
+::
+::
+::
+@debug_mode
+&Modalità debug
+::
+@ignore_prth
+&Ignora le parentesi
+::
+@us_uk_sys
+&Sistema di scrittura inglese
+::
+@output_string
+&Espressione di output
+::
+@accept_all
+&Accetta tutti i sistemi
+::
+@lang
+&Lingua corrente
+::
+@switch
+&ora è
+::
+@literal
+&Calcolo letterale
+::
+@operation_cancelled
+Operazione annullata
+::
+::
+::
+$lan
+::
+::
+::
+@infinity
+&Infinito
+::
+@true
+&Vero
+::
+@false
+&Falso
+::
+@undetermined
+&Indeterminato
+::
+@impossible
+&Impossibile
+::
+::
+::
+$cmd
+::
+::
+::
+@bs_acal
+
+Cambia tra la modalità 'accetta tutti i sisemi' e 'accetta il sistema corrente'
+
+Per riconscere tutti i sistemi lavora in questo modo:
+- Controlla il numero di punti e virgole
+- Se ci sono più punti e/o virgole li/e ignora
+- Nel caso ci siano un sono punto e una sola virgola ignora quello che viene prima
+
+Esempio:
+> 1.658.156,488 -> 2 punti, una virgola: ignora i punti -> 1658156,488
+> 12.189,14 -> un punto, una virgola: non ignora niente -> il punto viene prima: ignora il punto -> 12189,14
+> 1.000 -> un punto, 0 virgole: non ignora niente -> 1,0
+
+Nel caso accetti solo il sistema corrente:
+Se il sistema corrente è inglese ignora le virgole
+Se il sistema corrente è internazionale ignora i punti
+::
+@bs_addm
+
+Aggiunge un valore alla memoria
+
+Quando chiede di inserire un valore se inserisci solo il nome
+verrà assegnato il valore dell'ultimo risultato
+
+Esempio:
+
+> 1+1
+1 + 1 = 2
+
+> _addm
+> pi 3,14
+'pi = 3,14' è stato aggiunto alla memoria
+
+> _addm
+> a
+'a = 2' è stato aggiunto alla memoria
+::
+@bs_advn
+Non ci sono ulteriori informazioni per questo comando.
+
+@bs_delm
+
+Quando inserisci il nome del valore lo elimina
+
+Esempio:
+> _delm
+> a
+'a = 2' è stato cancellato dalla memoria
+::
+@bs_exmp
+Non ci sono ulteriori informazioni per questo comando.
+::
+@bs_expr
+Non ci sono ulteriori informazioni per questo comando.
+::
+@bs_help
+
+Mostra tutti i comandi e le loro funzioni.
+Sintassi:
+> _help <command>
+
+command -> il comando di cui si cercano informazioni, compreso il prefisso
+
+Esempio:
+> _help #dbug
+> _help _save
+::
+@bs_info
+Non ci sono ulteriori informazioni per questo comando.
+::
+@bs_lang
+
+Con questo comando si cambia la lingua del programma.
+Sintassi:
+> _lang <language>
+
+language -> un parametro opzionale dove si può inserire l'acronimo della lingua
+
+Esempio:
+> _lang IT
+> 'Lingua corrente' ora è Italiano
+::
+@bs_load
+Non ci sono ulteriori informazioni per questo comando.
+::
+@bs_open
+
+Apre un file .mem dove è stata salvata la memoria
+Puoi inserire il percorso e poi il nome del file oppure aggiungerlo
+con l'estensione alla fine del percorso
+
+Sintassi:
+> _open <*overwrite> <path>
+
+*overwrite -> se si vuole sostituire la memoria con quella del file
+              (non metterlo se si vuole solo aggiungere senza togliere nessun numero)
+
+path -> un parametro opzionale dove su può inserire il percorso della cartella
+        seguito dal nome del file
+
+Esempio:
+> _open
+> C:\Users\[USERNAME]\Documents\example.mem
+::
+@bs_save
+
+Salva un file .mem in una cartella specifica
+Puoi inserire il percorso e poi il nome del file oppure aggiungerlo
+con l'estensione alla fine del percorso.
+
+Sintassi:
+> _open <path>
+
+path -> un parametro opzionale dove su può inserire il percorso della cartella
+        seguito dal nome del file
+
+Esempio:
+> _save
+> C:\Users\[USERNAME]\Documents\example.mem
+::
+@bs_show
+Non ci sono ulteriori informazioni per questo comando.
+::
+@bs_smem
+Non ci sono ulteriori informazioni per questo comando.
+::
+@bs_stop
+Non ci sono ulteriori informazioni per questo comando.
+::
+@bs_swap
+
+Cambia cutout tra il sistema di scittura inglese e quello internazionale
+
+Nel sistema internazionale vengono usati i punti per le migliaia e la virgola
+per la parte decimale.
+
+Nel sistema inglese vengono usate le virgole per le migliaia e il punto per
+la parte decimale.
+::
+@bs_vshs
+
+Mostra i cambiamenti di ogni versione
+
+Si può specificare una versione in particolare altrimenti verranno
+visualizzate tutte.
+
+Formato:
+> _vshs <version>
+
+version -> una versione di quelle elencate quando si fa il comando _vshs
+           senza specificarla, 'last' mostra i cambiamenti più recenti
+::
+@ad_cmem
+Non ci sono ulteriori informazioni per questo comando.
+::
+@ad_dbug
+
+Mostra il log di debug quando si esegue un calcolo e mostra
+un log parziale nel file calclog.log
+::
+@ad_exit
+Non ci sono ulteriori informazioni per questo comando.
+::
+@ad_prth
+Non ci sono ulteriori informazioni per questo comando.
+::
+@ad_rset
+Non ci sono ulteriori informazioni per questo comando.
+::
+@ad_path
+Non ci sono ulteriori informazioni per questo comando.
+::
+@ad_ltrl
+Non ci sono ulteriori informazioni per questo comando.
+::
